@@ -7,7 +7,13 @@ html, body {
 
 body {
   font: caption;
-  background-color: #F4F7F8;
+  background-color: #2f5508;
+}
+
+.background{
+	background-color: #d4f5b3;
+	font: inherit;
+	font-size: 16px;
 }
 
 p {
@@ -17,11 +23,20 @@ p {
 .input{
 	margin: 10px 2em;
 	width: 80%;
+	background-color: #d4f5b3;
+	border-radius: 10px;
+	border: 3px solid #BADA55;
 }
 
 .input2{
 	margin: 10px 2em;
 	width: 81%;
+}
+
+.input3{
+	margin: 10px 2em;
+	width: 80%;
+	background-color: #2f5508;
 }
 
 button{
@@ -30,11 +45,28 @@ button{
 
 .data {
 	width: 100%;
-	
+	background-color: #d4f5b3;
+	border-radius: 10px;
+	border: 3px solid #BADA55;
 }
 .td {
 	width: 33%;
-	
+}
+
+.spaninput{
+	horiz-align: left;
+	width: 70%;
+	background-color: #d4f5b3;
+	border-radius: 10px;
+	border: 3px solid #BADA55;
+}
+
+.spanbutton{
+	horiz-align: right;
+	width: 10%;
+	background-color: #d4f5b3;
+	border-radius: 10px;
+	border: 3px solid #BADA55;
 }
 
 #content {
@@ -42,5 +74,7 @@ button{
 	height: 100%;
 	margin: 0 2em;
 	word-wrap: break-word;
-	background-color: white;
+	background-color: #d4f5b3;
+	border-radius: 10px;
+	border: 3px solid #BADA55;
 }

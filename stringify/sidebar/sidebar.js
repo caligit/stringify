@@ -1,11 +1,13 @@
 var myWindowId;
 const contentBox = document.getElementById("content");
 const customerNumberBox = document.getElementById("number");
-const regex = new RegExp("([A-Za-z0-9]+\/{0,1}[A-Za-z0-9]*\.)")
+const regex = new RegExp("(\\b[A-Za-z0-9]+\\/{1}[A-Za-z0-9]*\\.|\\b\\w{0,5}\\.)")
 document.getElementById("clear").addEventListener("click", clear);
 document.getElementById("number").addEventListener("input", setCustomerNumber);
+document.getElementById("xid").addEventListener("change", stringify);
+document.getElementById("customer").addEventListener("change", stringify);
 document.getElementById("content").addEventListener("input", stringify);
-
+document.getElementById("number").addEventListener("input", stringify);
 function clear(){
 	contentBox.value = "";
 }
@@ -15,7 +17,10 @@ function stringify(){
 	var userInput = contentBox.value.split('\n');
 	var xidBoxVal = document.getElementById("xid").value;
 	var addCustNumBoxVal = document.getElementById("customer").value;
-	if(addCustNumBoxVal == "1"){
+	var string;
+	var res;
+	var domainName;
+	if(addCustNumBoxVal === "1"){
 		var customerNumber = document.getElementById("number").value;
 	}else{
 		customerNumber = "";
@@ -24,45 +29,55 @@ function stringify(){
 		case "xid":
 			for(var i = 0; i  < userInput.length; i++){
 				string = userInput[i];
-				if(string == "+" || string == "Add To Favorites"){
+				if(string.trim() === "+" || string.toUpperCase().trim() === "ADD TO FAVORITES" || string.trim() === ""){
 					continue;
 				}else{
-					if(hasDomain(string)){
-						res = string.split(".")[1];
+					domainName = hasDomain(string);
+					if(domainName != null){
+						res = string.split(domainName)[1];
+					}else{
+						res = string;
 					}
-					if(addCustNumBoxVal == "1"){
+					if(addCustNumBoxVal === "1"){
 						res = customerNumber + "_" + res;
 					}
 					resultArr.push(res);
+					res = "";
 				}
 			}
-		break;
+			break;
 		case "gid":
 			for(var i = 0; i  < userInput.length; i++){
 				string = userInput[i];
-				if(string == "+" || string == "Add To Favorites"){
+				if(string.trim() === "+" || string.toUpperCase().trim() === "ADD TO FAVORITES" || string.trim() === ""){
 					continue;
 				}else{
-					if(addCustNumBoxVal == "1"){
+					if(addCustNumBoxVal === "1"){
 						res = customerNumber + "_" + string;
 					}else{
 						res = string;
 					}
 					resultArr.push(res);
+					res = "";
 				}
 			}
-		break;
+			break;
 		case "all":
 			for(var i = 0; i  < userInput.length; i++){
 				string = userInput[i];
-				if(addCustNumBoxVal == "1"){
-					res = customerNumber + "_" + string;
-				}else{
-					res = string;
+				if(string.trim() === ""){
+					continue;
+				}else {
+					if (addCustNumBoxVal === "1") {
+						res = customerNumber + "_" + string;
+					} else {
+						res = string;
+					}
+					resultArr.push(res);
+					res = "";
 				}
-				resultArr.push(res);
 			}
-		break;
+			break;
 	}
 	document.getElementById("string").value = resultArr.join(",");
 }
@@ -90,10 +105,11 @@ function setCustomerNumber(){
 }
 
 function hasDomain(string){
-	if(regex.test(string)){
-		return true
+	var match = string.match(regex);
+	if(match === null){
+		return null;
 	}
-	return false;
+	return match[0];
 }
 
 

@@ -11,15 +11,15 @@
 		<tr>
 			<td class="td">
 				<select class="data" id="xid">
-				  <option value="xid">Xid</option>
+				  <option value="xid" selected>Xid</option>
 				  <option value="gid">Gid</option>
 				  <option value="all">All</option>
 				</select>
 			</td>
 			<td class="td">
 				<select class="data" id="customer">
-				  <option value="1">Add Cust Num</option>
-				  <option value="0">Don't Add</option>
+					<option value="0" selected>No Cust Num</option>
+				  	<option value="1">Add Cust Num</option>
 				</select>
 			</td>
 			<td class="td">
@@ -27,9 +27,12 @@
 			</td>
 		</tr>
 	</table>
-	<input class="input" id="string" type="text"/><br>
+	<span class="input3">
+		<input class="spaninput" id="string" type="text"/>
+		<button class="spanbutton">Copy</button>
+	</span><br>
 	<button class="input" id="clear">Clear</button><br>
-	<textarea id = "content">hello</textarea>
+	<textarea class="background" id = "content">hello</textarea>
 	<script src="sidebar.js"></script>
 </body>
 
