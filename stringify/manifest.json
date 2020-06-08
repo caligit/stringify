@@ -1,0 +1,26 @@
+{
+
+	"manifest_version": 2,
+	"name": "Stringify",
+	"version": "1.0",
+	
+	"applications": {
+		"gecko": {
+		  "strict_min_version": "54.0a1"
+		}
+	},
+  
+	"description": "Strings together OTM order numbers from screen or entered in annotation box",
+
+	"icons": {
+		"48": "icons/beasts-48.png"
+	},
+
+	"sidebar_action": {
+		"default_icon": "icons/star.png",
+		"default_title" : "Stringify",
+		"default_panel": "sidebar/sidebar.html"
+	},
+	"permissions": ["storage", "tabs"]
+
+}

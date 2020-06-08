@@ -1,0 +1,46 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 1em 0 0 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: caption;
+  background-color: #F4F7F8;
+}
+
+p {
+  margin: 2em;
+}
+
+.input{
+	margin: 10px 2em;
+	width: 80%;
+}
+
+.input2{
+	margin: 10px 2em;
+	width: 81%;
+}
+
+button{
+	text-align: center;
+}
+
+.data {
+	width: 100%;
+	
+}
+.td {
+	width: 33%;
+	
+}
+
+#content {
+	width: 80%;
+	height: 100%;
+	margin: 0 2em;
+	word-wrap: break-word;
+	background-color: white;
+}
