@@ -8,6 +8,7 @@ document.getElementById("xid").addEventListener("change", stringify);
 document.getElementById("customer").addEventListener("change", stringify);
 document.getElementById("content").addEventListener("input", stringify);
 document.getElementById("number").addEventListener("input", stringify);
+document.getElementById("copy").addEventListener("click", copy);
 function clear(){
 	contentBox.value = "";
 }
@@ -112,5 +113,13 @@ function hasDomain(string){
 	return match[0];
 }
 
+function copy(){
+	try{
+		document.getElementById("string").select();
+		document.execCommand("copy");
+	}catch(e){
+		alert("Could not access clipboard.")
+	}
+}
 
 getCustomerNumber();

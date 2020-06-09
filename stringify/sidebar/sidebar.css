@@ -11,7 +11,7 @@ body {
 }
 
 .background{
-	background-color: #d4f5b3;
+	background-color: #f3f6f1;
 	font: inherit;
 	font-size: 16px;
 }
@@ -21,11 +21,9 @@ p {
 }
 
 .input{
-	margin: 10px 2em;
-	width: 80%;
-	background-color: #d4f5b3;
-	border-radius: 10px;
-	border: 3px solid #BADA55;
+	margin: 10px 10px 10px 2.5em;
+	max-width: 60px;
+	font-weight: bold;
 }
 
 .input2{
@@ -36,7 +34,6 @@ p {
 .input3{
 	margin: 10px 2em;
 	width: 80%;
-	background-color: #2f5508;
 }
 
 button{
@@ -45,36 +42,32 @@ button{
 
 .data {
 	width: 100%;
-	background-color: #d4f5b3;
-	border-radius: 10px;
-	border: 3px solid #BADA55;
 }
 .td {
 	width: 33%;
+	margin: 0 2em;
 }
 
 .spaninput{
 	horiz-align: left;
 	width: 70%;
-	background-color: #d4f5b3;
-	border-radius: 10px;
-	border: 3px solid #BADA55;
 }
 
 .spanbutton{
 	horiz-align: right;
-	width: 10%;
-	background-color: #d4f5b3;
-	border-radius: 10px;
-	border: 3px solid #BADA55;
+	max-width: 60px;
+	font-weight: bold;
 }
 
 #content {
-	width: 80%;
+	/*width: 80%;*/
 	height: 100%;
 	margin: 0 2em;
 	word-wrap: break-word;
+}
+
+button, textarea, select, input{
 	background-color: #d4f5b3;
-	border-radius: 10px;
-	border: 3px solid #BADA55;
+	border-radius: 5px;
+	border: 3px solid #090606;
 }
